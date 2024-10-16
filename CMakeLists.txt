@@ -32,6 +32,8 @@ file(GLOB SOURCES
 
 add_executable(${file_name} ${SOURCES})
 
+target_include_directories(${file_name} PRIVATE ${PROJECT_SOURCE_DIR}/src/include)
+
 set_target_properties(${file_name} PROPERTIES
      COMPILE_FLAGS "-mmcu=${MCU} -DF_CPU=${F_CPU}"
      LINK_FLAGS "-mmcu=${MCU}"
