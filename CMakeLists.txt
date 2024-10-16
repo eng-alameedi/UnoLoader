@@ -7,10 +7,25 @@ project(UnoLoader
 
 set(file_name BootLoader)
 
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR avr)
+
+set(CMAKE_C_COMPILER avr-gcc)
+set(CMAKE_CXX_COMPILER avr-g++)
+
 set(MCU atmega328p)
 set(F_CPU 16000000UL)
 
-file(SOURCES GLOB
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_CXX_STANDARD 17)
+
+set(CMAKE_C_STANDARD_REQUIRED True)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+set(file_name BootLoader)
+file(GLOB SOURCES
      src/main.cpp
      src/lib/*.cpp
 )
