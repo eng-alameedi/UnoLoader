@@ -12,6 +12,7 @@ set(CMAKE_SYSTEM_PROCESSOR avr)
 
 set(CMAKE_C_COMPILER avr-gcc)
 set(CMAKE_CXX_COMPILER avr-g++)
+set(CMAKE_ASM_COMPILER avr-as)
 
 set(MCU atmega328p)
 set(F_CPU 16000000UL)
