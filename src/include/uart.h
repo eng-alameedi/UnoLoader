@@ -10,6 +10,6 @@
 #ifndef _UART_H_
 #define _UART_H_
 
-// code here
+#include "settings.h"
 
 #endif  // _UART_H_
