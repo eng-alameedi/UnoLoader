@@ -18,5 +18,11 @@ void uart_init(void) {
 }
 
 void uart_send(char c) {
-  // code here
+  while (!(UCSR0A & (_BV(UDRE0))));  // check for the UDRE0 to be set 0 (buffer ready to transmit)
+  _MEM_8(UDR0) = c;
+}
+
+uint8_t uart_receive(void) {
+  while (!(UCSR0A & _BV(RXC0)));  // check for the RXC0 to be set 1 (unread data)
+  return _MEM_8(UDR0);
 }
