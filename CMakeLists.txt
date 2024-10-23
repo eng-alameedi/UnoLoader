@@ -5,8 +5,6 @@ project(UnoLoader
         LANGUAGES C CXX ASM
 )
 
-set(file_name BootLoader)
-
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_PROCESSOR avr)
 
