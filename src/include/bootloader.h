@@ -13,6 +13,12 @@
 
 #define PAGE_SIZE (128)  // the page size about (64 word), the result about (128 byte).
 
+#define MCUSR (0x54)
+#define WDRF (3)
+#define BORF (2)
+#define EXTRF (1)
+#define PORF (0)
+
 void page_erase(uint8_t);             // erase the page size from memory each time
 void page_buffer(uint8_t*, uint8_t);  // fill the buffer page byte by byte
 void page_write();                    // write the page of data to memory each time.
