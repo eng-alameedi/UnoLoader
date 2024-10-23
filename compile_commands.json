@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/alameedi/Github/UnoLoader/build",
+  "command": "avr-g++  -I/home/alameedi/Github/UnoLoader/src/include -std=gnu++17 -mmcu=atmega328p -DF_CPU=16000000UL -o CMakeFiles/BootLoader.dir/src/lib/uart.cpp.o -c /home/alameedi/Github/UnoLoader/src/lib/uart.cpp",
+  "file": "/home/alameedi/Github/UnoLoader/src/lib/uart.cpp",
+  "output": "CMakeFiles/BootLoader.dir/src/lib/uart.cpp.o"
+},
+{
+  "directory": "/home/alameedi/Github/UnoLoader/build",
+  "command": "avr-g++  -I/home/alameedi/Github/UnoLoader/src/include -std=gnu++17 -mmcu=atmega328p -DF_CPU=16000000UL -o CMakeFiles/BootLoader.dir/src/main.cpp.o -c /home/alameedi/Github/UnoLoader/src/main.cpp",
+  "file": "/home/alameedi/Github/UnoLoader/src/main.cpp",
+  "output": "CMakeFiles/BootLoader.dir/src/main.cpp.o"
+}
+]
