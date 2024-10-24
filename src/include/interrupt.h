@@ -9,11 +9,11 @@
 #define _LOADER_CORE_H_
 
 #ifndef cli
-#define cli() __asm__ __volatile__("cli ::: memory")
+#define cli() __asm__ __volatile__("cli" ::: "memory")
 #endif  // cli()
 
 #ifndef sei
-#define sei() __asm__ __volatile__("sei ::: memory")
+#define sei() __asm__ __volatile__("sei" ::: "memory")
 #endif  // sei()
 
 #ifndef jmpapp
