@@ -13,7 +13,7 @@
 #endif  // cli()
 
 #ifndef sei
-#define sei __asm__ __volatile__("sei ::: memory")
+#define sei() __asm__ __volatile__("sei ::: memory")
 #endif  // sei()
 
 #endif  // _LOADER_CORE_H_
