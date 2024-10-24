@@ -12,10 +12,11 @@
 
 int main() {
   if (_MEM_8(MCUSR) & _BV(EXTRF)) {
-    cli();
-    uart_init();
-    uart_send('B');
-    set_wdt();
+    cli();                                  // disable the external interrupt
+    uart_init();                            // initialize the uart communication
+    uart_send('B');                         // send a 'B' to the terminal to indicate bootloade
+    set_wdt();                              // activate the watchdog timer for 1s.
+    while (!(_MEM_8(UCSR0A) & _BV(RXC0)));  // infinite loop to check if there is a received code
     while (true) {
       // code for receive and write the code to memory
     }
