@@ -26,7 +26,7 @@ int main() {
       // infinite loop
     }
   } else {
-    // code to cancel the bootloader, and go to application code.
+    jmpapp();  // jump to application code.
   }
   return 0;
 }
