@@ -37,3 +37,20 @@ set_target_properties(${file_name} PROPERTIES
      COMPILE_FLAGS "-mmcu=${MCU} -DF_CPU=${F_CPU}"
      LINK_FLAGS "-mmcu=${MCU}"
 )
+
+add_custom_command(TARGET ${file_name}
+  POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_BINARY_DIR}/boot
+)
+
+add_custom_command(TARGET ${file_name}
+  POST_BUILD
+  COMMAND avr-objcopy -O ihex -R .eeprom ${file_name} ${CMAKE_BINARY_DIR}/boot/${file_name}.hex
+  COMMENT "Generation Bootloader HEX file for Arduino"
+)
+
+add_custom_target(upload
+  COMMAND avrdude -c arduino -p m328p -P /dev/ttyUSB0 -U flash:w:${CMAKE_BINARY_DIR}/boot/${file_name}.hex:i
+  DEPENDS ${file_name}.hex
+  COMMENT "Uploading Bootloader HEX file to Arduino"
+)
