@@ -10,6 +10,7 @@
 #include <stdint.h>
 
 #include "settings.h"
+#include "timer.h"
 
 void led_setup() {
   _MEM_8(DDRB) = _BV(POWER_LED);   // put the builtin led on port 5, for output.
@@ -17,4 +18,11 @@ void led_setup() {
 
   _MEM_8(DDRD) = _BV(TX_LED) | _BV(RX_LED);   // put the builtin the tx, and rx led for output
   _MEM_8(PORTD) = _BV(TX_LED) | _BV(RX_LED);  // set the port 4, and 5 to high voltage.
+}
+
+void led_toggle() {
+  delay(100);
+  _MEM_8(PORTD) &= ~(_BV(RX_LED));
+  delay(100);
+  _MEM_8(PORTD) |= (_BV(RX_LED));
 }

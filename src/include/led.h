@@ -21,5 +21,6 @@
 #define RX_LED (4)
 
 void led_setup(void);
+void led_toggle(void);
 
 #endif  // _LED_H_
