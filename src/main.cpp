@@ -22,7 +22,7 @@ int main() {
     set_wdt();                              // activate the watchdog timer for 1s.
     while (!(_MEM_8(UCSR0A) & _BV(RXC0)));  // infinite loop to check if there is a received code
     while (true) {
-      // code for receive and write the code to memory
+      led_toggle();  // toggle the Rx led when serial data received
     }
     sei();
 
