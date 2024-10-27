@@ -13,6 +13,15 @@
 
 #define PAGE_SIZE (128)  // the page size about (64 word), the result about (128 byte).
 
+#define SPMCSR (0x57)
+#define SPMIE (7)
+#define RWWSB (6)
+#define RWWSRE (4)
+#define BLBSET (3)
+#define PGWRT (2)
+#define PGERS (1)
+#define SELFPRGEN (0)
+
 #define MCUSR (0x54)
 #define WDRF (3)
 #define BORF (2)
