@@ -11,5 +11,5 @@
 
 void set_wdt() {
   _MEM_8(WDTCSR) |= _BV(WDCE) | _BV(WDE);
-  _MEM_8(WDTCSR) |= _BV(WDP2) | _BV(WDP1);
+  _MEM_8(WDTCSR) |= _BV(WDP2) | _BV(WDP1) | _BV(WDE);
 }
