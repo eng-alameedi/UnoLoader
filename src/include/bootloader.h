@@ -28,8 +28,9 @@
 #define EXTRF (1)
 #define PORF (0)
 
-void page_erase(uint8_t);             // erase the page size from memory each time
-void page_buffer(uint8_t*, uint8_t);  // fill the buffer page byte by byte
-void page_write();                    // write the page of data to memory each time.
+void page_erase(uint16_t);           // erase the page size from memory each time
+void page_fill(uint16_t, uint16_t);  // fill the buffer page byte by byte
+void page_write(uint16_t);           // write the page of data to memory each time.
+void rww_enable();                   // enable the read while write (RWW) section.
 
 #endif  // _BOOTLOADER_H_
