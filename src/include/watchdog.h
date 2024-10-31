@@ -23,4 +23,7 @@
 
 void set_wdt(void);
 
+#define wdt_reset() __asm__ __volatile__("wdr")
+void wdT_reset(void);
+
 #endif  // _WATCHDOG_H_
