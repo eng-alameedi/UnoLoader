@@ -20,8 +20,9 @@ int main() {
     ctc_setup();     // setup the timer (ctc mode), and delay(ms) function
     led_setup();     // set the tx, rx, and power-on leds.
 
+    set_wdt();
     while (true) {
-      set_wdt();                              // activate the watchdog timer for 1s.
+      wdT_reset();                            // activate the watchdog timer for 1s.
       led_toggle();                           // toggle the Rx led when serial data received
       while (!(_MEM_8(UCSR0A) & _BV(RXC0)));  // infinite loop to check if there is a received code
     }
