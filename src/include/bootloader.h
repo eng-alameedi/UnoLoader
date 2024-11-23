@@ -11,7 +11,7 @@
 
 #include <stdint.h>
 
-#define PAGE_SIZE (128)  // the page size about (64 word), the result about (128 byte).
+#define PAGE_SIZE (128)  // the page size of ATmega328p is (64 word) each word contain 2 byte, the result is (128 byte).
 
 #define SPMCSR (0x57)
 #define SPMIE (7)
