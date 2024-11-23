@@ -10,7 +10,12 @@
 #ifndef _SETTINGS_H_
 #define _SETTINGS_H_
 
-#define BAUD (9600)  // initial baud rate
+#ifndef BAUD_RATE            // check if the baud rate not defined.
+#if F_CPU >= 8000000L        // check the device type, for the ATmega328p F_CPU = 16 MIPS
+#define BAUD_RATE (115200L)  // the used baud rate
+#else
+#define BAUBAUD_RATE (9600L)  // default baud rate.
+#endif                        // BAUD_RATE
 
 #define Foc0a (1000)  // for setup timer in ms
 #define N (64)        // timer perscale chose (64)
