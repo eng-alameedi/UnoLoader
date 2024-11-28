@@ -14,7 +14,7 @@
 
 #include "settings.h"  // used for the settings of all bootloader options
 
-#define UBRR ((F_CPU / (16UL * BAUD_RATE)) - 1)  // used to calculate, and control baud rate perscale clock
+#define UBRR (_UBRR)  // use the calculated UART settings
 
 #define UDR0 (0xC6)
 
