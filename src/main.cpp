@@ -28,7 +28,7 @@ int main() {
         while (!(_MEM_8(UCSR0A) & _BV(RXC0)));  // infinite loop to check if there is a received code
 
         // main received code, erase page, and write page
-      }
+      }  // Loop for receiving all the application code before loop until watchdog reset
     }
   }
   sei();
