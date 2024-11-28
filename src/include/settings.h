@@ -17,6 +17,16 @@
 #define BAUBAUD_RATE (9600L)  // default baud rate.
 #endif                        // BAUD_RATE
 
+#ifndef _UBRR                                     // define the value of UART settings for ATmega328p.
+#define _UBRR ((F_CPU / (16UL * BAUD_RATE)) - 1)  // define the UART settings for F_CPU 16MIPS
+#endif
+
+#define PAGESIZE (64)                // define the page size to (64) word, default to ATmega328p
+#define SPM_PAGESIZE (2 * PAGESIZE)  // define the buffer size to (128) byte, default ATmega328p.
+#define RAMSTART (0x100)             // define the start address of ram in ATmega328p memory address.
+#define RAMEND (0x8FF)               // define the end address of ram in ATmega328p memory address.
+#define FLASHEND (0x7FFF)
+
 #define Foc0a (1000)  // for setup timer in ms
 #define N (64)        // timer perscale chose (64)
 
